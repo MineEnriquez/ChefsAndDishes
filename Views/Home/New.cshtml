@@ -1,0 +1,35 @@
+    <div>
+    @using ChefsAndDishes.Models
+    @model Chef
+        
+	<form asp-action="New" method="post">
+
+<div class="container wrapper">
+  <div class="row">
+    <div class="col-sm">
+            <div>
+                <span class="ValidationError" asp-validation-for="FirstName"></span> <br>
+                <label class="InputLabel" asp-for="FirstName"></label>
+                <input class="InputField" asp-for="FirstName">
+            </div>
+            <div>
+                <span class="ValidationError" asp-validation-for="LastName"></span> <br>
+                <label class="InputLabel" asp-for="LastName"></label>
+                <input class="InputField" asp-for="LastName">
+            </div>
+    </div>
+    <div class="col-sm">
+                     <div>
+                        <span class="ValidationError" asp-validation-for="DateOfBirth"></span> <br>
+                        <label class="InputLabel" asp-for="DateOfBirth"></label>
+                        <input class="InputField" asp-for="DateOfBirth">
+                    </div>           
+                <div>
+                    <input class="InputButton" type="submit" value="Submit">
+                </div>
+    </div>
+  </div>
+</div>
+
+        </form>
+    </div>

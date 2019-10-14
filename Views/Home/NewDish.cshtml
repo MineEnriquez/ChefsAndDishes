@@ -1,0 +1,62 @@
+    <div>
+    @using ChefsAndDishes.Models
+    @model Dish
+        
+	<form asp-action="Dish/New" method="post">
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+
+            <div>
+                <span class="ValidationError" asp-validation-for="Name"></span> <br>
+                <label class="InputLabel" asp-for="Name"></label>
+                <input class="InputField" asp-for="Name">
+            </div>
+            <div>
+                <span class="ValidationError" asp-validation-for="Calories"></span> <br>
+                <label class="InputLabel" asp-for="Calories"></label>
+                <input class="InputField" asp-for="Calories">
+            </div>
+
+            <div>
+                <span class="ValidationError" asp-validation-for="Description"></span> <br>
+                <label class="InputLabel" asp-for="Description"></label>
+                <input class="InputField" asp-for="Description">
+            </div>
+    </div>
+    <div class="col-sm">
+
+            <div class="top">
+                 <span class="ValidationError" asp-validation-for="ChefId"></span> <br>
+                <label class="InputLabel" asp-for="ChefId"></label><br>
+                <select asp-for="ChefId">
+                    @foreach (Chef chef in ViewBag.Chefs)
+                    {
+                                    <option value="@chef.ChefId">@chef.FirstName @chef.LastName</option>
+                    }
+                </select>        
+            </div>
+    </div>
+    <div class="col-sm">
+
+            <div>
+                <span class="ValidationError" asp-validation-for="Tastiness"></span> <br>
+                <label class="InputLabel" asp-for="Tastiness"></label><br>
+                <select asp-for="Tastiness">
+                    @for (int i = 1; i<11; i++)
+                    {
+                                    <option value="@i"> @i</option>
+                    }
+                </select>  
+            </div>
+    </div>
+  </div>
+</div>
+
+                  <div>
+                    <input class="InputButton" type="submit" value="Submit">
+                </div>
+
+        </form>
+    </div>
